@@ -14,15 +14,25 @@ fn verse(n: u32) -> String {
              And if one green bottle should accidentally fall,\n\
              There'll be no green bottles hanging on the wall."
         ),
-        _ => format!(
-            "{} green bottles hanging on the wall,\n\
-             {} green bottles hanging on the wall,\n\
-             And if one green bottle should accidentally fall,\n\
-             There'll be {} green bottles hanging on the wall.",
-            num_to_word(n),                    // first line capitalized
-            num_to_word(n),                    // second line capitalized
-            num_to_word(n - 1).to_lowercase()  // “there'll be ...” lowercase
-        ),
+        _ => {
+            let next_n = n - 1;
+            format!(
+                "{} green {} hanging on the wall,\n\
+                 {} green {} hanging on the wall,\n\
+                 And if one green bottle should accidentally fall,\n\
+                 There'll be {} green {} hanging on the wall.",
+                num_to_word(n),
+                bottle_word(n),
+                num_to_word(n),
+                bottle_word(n),
+                if next_n == 0 {
+                    "no".to_string()
+                } else {
+                    num_to_word(next_n).to_lowercase()
+                },
+                if next_n == 1 { "bottle" } else { "bottles" }
+            )
+        }
     }
 }
 
@@ -40,5 +50,13 @@ fn num_to_word(n: u32) -> String {
         9 => "Nine".to_string(),
         10 => "Ten".to_string(),
         _ => n.to_string(),
+    }
+}
+
+fn bottle_word(n: u32) -> &'static str {
+    if n == 1 {
+        "bottle"
+    } else {
+        "bottles"
     }
 }

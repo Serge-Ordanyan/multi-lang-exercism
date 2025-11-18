@@ -4,7 +4,6 @@ welcome to difference of squares on exercism's rust track.
 if you need help running the tests or submitting your code, check out `help.md`.
 
 ## instructions
-
 find the difference between the square of the sum and the sum of the squares of the first n natural numbers.
 
 the square of the sum of the first ten natural numbers is
