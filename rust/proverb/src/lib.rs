@@ -1,0 +1,17 @@
+pub fn build_proverb(list: &[&str]) -> String {
+    if list.is_empty() {
+        return String::new();
+    }
+
+    let mut lines = Vec::new();
+
+    for window in list.windows(2) {
+        let first = window[0];
+        let second = window[1];
+        lines.push(format!("For want of a {} the {} was lost.", first, second));
+    }
+
+    lines.push(format!("And all for the want of a {}.", list[0]));
+
+    lines.join("\n")
+}
