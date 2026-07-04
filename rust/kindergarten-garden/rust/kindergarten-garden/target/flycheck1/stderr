@@ -1,0 +1,38 @@
+   0.308623939s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint: stale: changed "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs"
+   0.308666279s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:           (vs) "/Users/serge/Exercism/rust/kindergarten-garden/target/debug/.fingerprint/kindergarten_garden-5842426a59f94bcc/dep-lib-kindergarten_garden"
+   0.308678123s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1783192050, nanos: 529541071 } < FileTime { seconds: 1783192112, nanos: 398016760 }
+   0.308902639s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint: fingerprint dirty for kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("kindergarten_garden", ["lib"], "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs", Edition2024) }
+   0.308951111s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/serge/Exercism/rust/kindergarten-garden/target/debug/.fingerprint/kindergarten_garden-5842426a59f94bcc/dep-lib-kindergarten_garden", reference_mtime: FileTime { seconds: 1783192050, nanos: 529541071 }, stale: "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs", stale_mtime: FileTime { seconds: 1783192112, nanos: 398016760 } }))
+   0.309480558s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint: stale: changed "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs"
+   0.309507192s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:           (vs) "/Users/serge/Exercism/rust/kindergarten-garden/target/debug/.fingerprint/kindergarten_garden-509378b5e9a1ba30/dep-test-lib-kindergarten_garden"
+   0.309514683s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1783192050, nanos: 529569530 } < FileTime { seconds: 1783192112, nanos: 398016760 }
+   0.309649016s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint: fingerprint dirty for kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("kindergarten_garden", ["lib"], "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs", Edition2024) }
+   0.309674673s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/serge/Exercism/rust/kindergarten-garden/target/debug/.fingerprint/kindergarten_garden-509378b5e9a1ba30/dep-test-lib-kindergarten_garden", reference_mtime: FileTime { seconds: 1783192050, nanos: 529569530 }, stale: "/Users/serge/Exercism/rust/kindergarten-garden/src/lib.rs", stale_mtime: FileTime { seconds: 1783192112, nanos: 398016760 } }))
+   0.310162692s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint: fingerprint error for kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden)/Check { test: true }/TargetInner { kind: "test", name: "kindergarten_garden", benched: false, ..: with_path("/Users/serge/Exercism/rust/kindergarten-garden/tests/kindergarten_garden.rs", Edition2024) }
+   0.310200642s  INFO prepare_target{force=false package_id=kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden) target="kindergarten_garden"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/serge/Exercism/rust/kindergarten-garden/target/debug/.fingerprint/kindergarten_garden-00dab5cacc912d3a/test-integration-test-kindergarten_garden`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+  18: <unknown>
+    Checking kindergarten_garden v0.1.0 (/Users/serge/Exercism/rust/kindergarten-garden)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.18s
